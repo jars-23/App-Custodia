@@ -1,0 +1,192 @@
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background-color: #0c1017;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1500;
+  }
+  
+  .sidebar.collapsed {
+    width: 83px; 
+  }
+
+  .sidebar h2 {
+    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    font-size: 18px;
+  }
+
+.hidden-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.visible-text {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+  min-height: 46px;
+}
+
+.sidebar nav ul li:hover {
+  background-color: #141a23;
+  border-left: 5px solid #1ca1f3;  
+  color: #ffffff !important;
+}
+
+.sidebar ul li.active {
+  background-color: #29333a;
+  border-left: 5px solid #1ca1f3;  
+  color: #ffffff !important;
+}
+
+.sidebar ul li.active .dropdown {
+  background-color: transparent;
+  border-left: 5px solid #1ca1f3;  
+}
+
+.sidebar nav ul li a, .dropdown-toggle-slider {  
+  color: #b9b9b9 !important;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar ul li.active a { 
+  color: #ffffff !important;
+}
+
+.sidebar nav ul li:hover a {  
+  color: #fff !important;
+}
+
+.sidebar.collapsed nav ul li{
+  padding: 10px 6px;
+}
+
+.sidebar.collapsed nav ul li a {
+  justify-content: center;
+}
+
+.sidebar nav ul li a svg{
+  color: #b9b9b9 !important;
+}
+
+.sidebar.collapsed nav ul li a svg{
+  padding-left: 13px;
+}
+
+.sidebar ul li.active a svg { 
+  color: #1ca1f3 !important;
+}
+
+.sidebar nav ul li:hover a svg{
+  color: #ffffff !important;
+}
+
+.sidebar.collapsed nav ul li a span {
+  display: none;
+}
+
+/*----SubMenu----*/
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column; 
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.dropdown-toggle-slider{
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  max-height: 0; 
+  transition: max-height 0.3s ease-out;
+}
+
+.submenu.show {
+  display: block; 
+  max-height: 1000px; 
+}
+
+.submenu > li {
+  padding: 10px;
+  background-color: #18212f;
+  width: 233px;
+}
+
+.sidebar nav ul li.dropdown:hover {
+  background-color: #141a23;
+}
+
+
+.submenu li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown  button{
+  padding: 0px;
+}
+
+.sidebar.collapsed .dropdown button svg {
+  padding-left: 9px;
+}
+
+
+.sidebar.collapsed .dropdown.open .submenu li {
+  width: 38px;
+  padding: 10px 0px !important;
+}
+
+.sidebar.collapsed .dropdown.open .submenu li a svg{
+  padding-left: 0px;
+}
